@@ -7,18 +7,19 @@ SegmentTreeMax::SegmentTreeMax(int *array, int size) {
         tree[size + i] = array[i];
     }
 
-    for (int i = size - 1; i > 0; i--) {
-        tree[i] = std::max(tree[2 * i], tree[2 * i + 1]);
-    }
+    CalculateMaxes();
 }
 
 SegmentTreeMax::SegmentTreeMax(std::vector<int> vector) {
-    int size = vector.size();
-    tree.resize(2 * size);
+    tree.resize(2 * vector.size());
 
-    std::copy(vector.begin(), vector.end(), tree.begin() + size);
+    std::copy(vector.begin(), vector.end(), tree.begin() + vector.size());
 
-    for (int i = size - 1; i > 0; i--) {
+    CalculateMaxes();
+}
+
+void SegmentTreeMax::CalculateMaxes() {
+    for (int i = tree.size() / 2 - 1; i > 0; i--) {
         tree[i] = std::max(tree[2 * i], tree[2 * i + 1]);
     }
 }

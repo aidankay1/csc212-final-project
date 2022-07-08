@@ -4,8 +4,11 @@
 class SegmentTreeMax {
    private:
     // The segment tree, represented by a 1D vector
-    // The first element is always empty
+    // The first element is always empty, the second element is the root node
     std::vector<int> tree;
+
+    // Calculate values of the tree's internal nodes
+    void CalculateMaxes();
 
    public:
     // Basic array constructor
