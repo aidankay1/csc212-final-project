@@ -3,6 +3,7 @@
 SegmentTreeMax::SegmentTreeMax(int *array, int size) {
     tree.resize(2 * size);
     
+    // Copy data into second half of tree
     for (int i = 0; i < size; i++) {
         tree[size + i] = array[i];
     }
@@ -13,6 +14,7 @@ SegmentTreeMax::SegmentTreeMax(int *array, int size) {
 SegmentTreeMax::SegmentTreeMax(std::vector<int> vector) {
     tree.resize(2 * vector.size());
 
+    // Copy data into second half of tree
     std::copy(vector.begin(), vector.end(), tree.begin() + vector.size());
 
     CalculateMaxes();
