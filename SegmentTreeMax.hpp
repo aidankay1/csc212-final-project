@@ -1,0 +1,4 @@
+class SegmentTreeMax {
+   private:
+   public:
+};
