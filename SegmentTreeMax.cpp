@@ -21,6 +21,8 @@ SegmentTreeMax::SegmentTreeMax(std::vector<int> vector) {
 }
 
 void SegmentTreeMax::CalculateMaxes() {
+    // This implementation inspired by Stable Sort on YouTube (https://youtu.be/xztU7lmDLv8)
+    
     for (int i = tree.size() / 2 - 1; i > 0; i--) {
         tree[i] = std::max(tree[2 * i], tree[2 * i + 1]);
     }
