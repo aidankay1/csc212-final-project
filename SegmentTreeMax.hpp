@@ -1,5 +1,7 @@
-#include <vector>
 #include <algorithm>
+#include <fstream>
+#include <string>
+#include <vector>
 
 class SegmentTreeMax {
    private:
@@ -15,6 +17,9 @@ class SegmentTreeMax {
     SegmentTreeMax(int *array, int size);
     // Vector constructor
     SegmentTreeMax(std::vector<int> vector);
+    // Filename constructor
+    // Reads space-separated intervals in from a text file
+    SegmentTreeMax(std::string filename);
     // Insert a value into the tree
     void Insert(int value);
     // Update the value at the specified index
