@@ -45,7 +45,22 @@ void SegmentTreeMax::CalculateMaxes() {
     }
 }
 
-void SegmentTreeMax::Insert(int value) {
+void SegmentTreeMax::Insert(int value)
+    // To copy into the tree   
+    std::vector<int> data;
+    data.resize(tree.size() / 2);
+    std::copy(tree.begin() + data.size(), tree.end(), data.begin());
+
+   // To add a value to the data
+   data.push_back(value);
+
+  // To rebuild the tree
+  tree.clear();
+  tree.resize(2 * data.size());
+
+  // To copy data into second half of the tree
+  std::copy(data.begin(), data.end(), tree.begin() + data.size());
+  calculateMaxes();
 }
 
 void SegmentTreeMax::Update(int index, int value) {
@@ -55,4 +70,21 @@ unsigned int SegmentTreeMax::Search(int value) {
 }
 
 void SegmentTreeMax::Print() {
+    int count = 0;
+    int row = 1;
+    
+    // To loop through the tree
+    for (unsigned int i = 1; i < tree.size(); i++){
+        std::cout << tree[i] << " ";
+        count++;
+    
+       // End of row, break line and update to next row
+       if (count == row || i == treee.size() - 1){
+           std::cout << std::endl;
+           count = 0;
+           row *= 2;
+       }
+    }
+}
+    
 }
