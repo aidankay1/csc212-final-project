@@ -20,5 +20,5 @@ Data structure is a method used to store and organize data. It gives us a way of
 
    It is a data structure where data element are not arrange sequentially or linearly one after the other but instead data element are arrange in hierachical where one element is connect to one element or more elements. They are not esay to implement but non linear data structure utilizes computer memory efficiently. Examples of non-linear data structure are trees and graph.
  
- ![image](https://user-images.githubusercontent.com/90344642/180303491-5957d3a3-9513-4d8f-981d-7ae74f6675a7.png)
+         ![image](https://user-images.githubusercontent.com/90344642/180303491-5957d3a3-9513-4d8f-981d-7ae74f6675a7.png)
 
