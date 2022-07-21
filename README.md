@@ -13,5 +13,4 @@ Data structure is a method used to store and organize data. It gives us a way of
 
 #### Types of data structure
 * Linear data structure
-
 It is a data structure where data element
