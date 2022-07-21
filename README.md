@@ -14,7 +14,7 @@ Data structure is a method used to store and organize data. It gives us a way of
 #### Types of data structure
 * Linear data structure
 
-    It is a data structure where data element are arrange sequentially or linearly one after the other. Linear data structure are easy to implement since they have data element linearly one after the other. Examples of linear data structure are array, stack, queue, and linked list.
+      It is a data structure where data element are arrange sequentially or linearly one after the other. Linear data structure are easy to implement since they have data element linearly one after the other. Examples of linear data structure are array, stack, queue, and linked list.
 
 * Non-linear data structure
 
