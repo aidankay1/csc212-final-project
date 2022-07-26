@@ -86,3 +86,30 @@ void SegmentTreeMax::Print() {
        }
     }
 }
+
+void SegmentTreeMax::GenerateDotVisualization(std::string filename) {
+    // Open the file for writing
+    std::ofstream of(filename);
+
+    of << "graph SegmentTree {\n\n";
+    
+    // Draw the root node
+    of << "\t" << 1 << " [label = \"" << tree[1] << "\"] [style=\"filled\"] [fillcolor=\"#99ff88\"]\n";
+    
+    // Label each node
+    // This allows multiple nodes with the same value to exist
+    for (int i = 2; i < tree.size(); i++) {
+        of << "\t" << i << " [label = \"" << tree[i] << "\"]\n";
+    }
+    
+    of << "\n";
+
+    // Draw the edges between each node
+    for (int i = 2; i < tree.size(); i++) {
+        // If a node is chosen as the max of two elements, make the edge bold
+        bool max_of_pair = (tree[i] == tree[i / 2]);
+        of << "\t" << i / 2 << " -- " << i << (max_of_pair ? " [penwidth=3]" : "") << "\n";
+    }
+
+    of << "\n}";
+}

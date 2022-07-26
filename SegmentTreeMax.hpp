@@ -12,6 +12,8 @@ class SegmentTreeMax {
 
     // Calculate values of the tree's internal nodes
     void CalculateMaxes();
+    // Check if a number is a power of two
+    bool IsPowerOfTwo(int n);
 
    public:
     // Basic array constructor
@@ -29,4 +31,6 @@ class SegmentTreeMax {
     unsigned int Search(int value);
     // Print a string representation of the tree to stdout
     void Print();
+    // Output a representation of the tree to a Graphviz DOT file
+    void GenerateDotVisualization(std::string filename);
 };
