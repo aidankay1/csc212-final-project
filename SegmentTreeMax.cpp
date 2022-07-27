@@ -46,7 +46,7 @@ void SegmentTreeMax::CalculateMaxes() {
 }
 
 void SegmentTreeMax::Insert(int value) {
-    // To copy into the tree   
+    // To copy into the tree
     std::vector<int> data;
     data.resize(tree.size() / 2);
     std::copy(tree.begin() + data.size(), tree.end(), data.begin());
@@ -77,7 +77,7 @@ unsigned int SegmentTreeMax::Search(int value) {
 
     // If value is found
     if (found != end(tree)) {
-        // Get index of value from iterator 
+        // Get index of value from iterator
         return std::distance(tree.begin(), found);
     } else {
         // Not found
@@ -88,18 +88,18 @@ unsigned int SegmentTreeMax::Search(int value) {
 void SegmentTreeMax::Print() {
     int count = 0;
     int row = 1;
-    
+
     // To loop through the tree
-    for (unsigned int i = 1; i < tree.size(); i++){
+    for (unsigned int i = 1; i < tree.size(); i++) {
         std::cout << tree[i] << " ";
         count++;
-    
+
         // End of row, break line and update to next row
-        if (count == row || i == tree.size() - 1){
-           std::cout << std::endl;
-           count = 0;
-           row *= 2;
-       }
+        if (count == row || i == tree.size() - 1) {
+            std::cout << std::endl;
+            count = 0;
+            row *= 2;
+        }
     }
 }
 
@@ -108,16 +108,16 @@ void SegmentTreeMax::GenerateDotVisualization(std::string filename) {
     std::ofstream of(filename);
 
     of << "graph SegmentTree {\n\n";
-    
+
     // Draw the root node
     of << "\t" << 1 << " [label = \"" << tree[1] << "\"] [style=\"filled\"] [fillcolor=\"#99ff88\"]\n";
-    
+
     // Label each node
     // This allows multiple nodes with the same value to exist
     for (int i = 2; i < tree.size(); i++) {
         of << "\t" << i << " [label = \"" << tree[i] << "\"]\n";
     }
-    
+
     of << "\n";
 
     // Draw the edges between each node
