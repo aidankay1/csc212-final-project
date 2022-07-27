@@ -30,4 +30,4 @@ Data structure is a method used to store and organize data. It gives us a way of
    The data structure hierarchy showing the linear and non-linear data structure
    
 ## Introdution
-Segement Tree are tree data structure that are used for storing informatiom about intervals or array segment and to answer quesries
+Segement Tree are tree data structure that are used for storing information about intervals or array segment and to answer quesries
