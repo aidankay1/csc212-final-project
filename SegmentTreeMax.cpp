@@ -51,22 +51,38 @@ void SegmentTreeMax::Insert(int value) {
     data.resize(tree.size() / 2);
     std::copy(tree.begin() + data.size(), tree.end(), data.begin());
 
-   // To add a value to the data
-   data.push_back(value);
+    // To add a value to the data
+    data.push_back(value);
 
-  // To rebuild the tree
-  tree.clear();
-  tree.resize(2 * data.size());
+    // To rebuild the tree
+    tree.clear();
+    tree.resize(2 * data.size());
 
-  // To copy data into second half of the tree
-  std::copy(data.begin(), data.end(), tree.begin() + data.size());
-  CalculateMaxes();
+    // To copy data into second half of the tree
+    std::copy(data.begin(), data.end(), tree.begin() + data.size());
+    CalculateMaxes();
 }
 
 void SegmentTreeMax::Update(int index, int value) {
+    // Updates value with a new value at a specific index
+    int idx = (tree.size() / 2) + index;
+    tree[idx] = value;
+
+    CalculateMaxes();
 }
 
 unsigned int SegmentTreeMax::Search(int value) {
+    // Check if value exists in vector
+    std::vector<int>::iterator found = std::find(tree.begin() + 1, tree.end(), value);
+
+    // If value is found
+    if (found != end(tree)) {
+        // Get index of value from iterator 
+        return std::distance(tree.begin(), found);
+    } else {
+        // Not found
+        return 0;
+    }
 }
 
 void SegmentTreeMax::Print() {
@@ -78,8 +94,8 @@ void SegmentTreeMax::Print() {
         std::cout << tree[i] << " ";
         count++;
     
-       // End of row, break line and update to next row
-       if (count == row || i == tree.size() - 1){
+        // End of row, break line and update to next row
+        if (count == row || i == tree.size() - 1){
            std::cout << std::endl;
            count = 0;
            row *= 2;
