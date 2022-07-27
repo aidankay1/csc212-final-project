@@ -8,6 +8,20 @@ Aidan Kelly, Hannah Naphosaysavath, Olugbenga Olufasola
 
 For the final project, we elected to implement the Segment Tree data structure in C++. We were given approximately four weeks to complete the project, which included a written report, an oral presentation, and computer-generated visualizations based on our data structure.
 
+Class skeleton: Aidan Kelly
+.DOT visualization: Aidan Kelly
+Compilation instructions: Aidan Kelly
+Report implementation: Aidan Kelly
+Presentation explaination of code: Aidan Kelly
+Update method: Hannah Naphosaysavath
+Search method: Hannah Naphosaysavath
+Report introduction: Hannah Naphosaysavath
+Presentation descriptions & applications: Hannah Naphosaysavath
+Insert method: Olugbenga Olufasola
+Print method: Olugbenga Olufasola
+Report methods: Olugbenga Olufasola
+Presentation explaination of plot & time complexity: Olugbenga Olufasola
+
 ## Building & Usage
 To test this implementation, create a `main.cpp` file and add any of the functionality outlined in `SegmentTreeMax.hpp`. To compile with GCC, use `g++ main.cpp SegmentTreeMax.cpp -o main`. Then, simply run the program with `./main`.
 
